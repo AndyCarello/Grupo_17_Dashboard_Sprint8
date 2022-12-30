@@ -42,12 +42,12 @@ function SearchMovies(){
 	// const [products, setProducts] = useState([]);
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/users';
-			fetch(endpointUsers)
+		// const endpointUsers = 'http://localhost:3000/api/users';
+			fetch('https://rickandmortyapi.com/api/character')
 				.then(response => response.json())
 				.then( data => setUsers(data) )
 				.catch(error => console.log(error))
-	}, [setUsers])
+	}, [])
 	console.log(users);
 	console.log('hola');
 	
