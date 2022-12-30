@@ -36,6 +36,27 @@ function SearchMovies(){
 		inputTag.current.value = '';
 	}
 
+
+	// traer las api
+
+	const [users, setUsers] = useState([]);
+	// const [products, setProducts] = useState([]);
+
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/users';
+				
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setUsers(data) )
+				.catch(error => console.log(error))
+	}, [])
+
+	console.log(users);
+	console.log('hola')
+	
+
+
 	return(
 		<div className="container-fluid">
 			{
