@@ -36,22 +36,32 @@ function SearchMovies(){
 		inputTag.current.value = '';
 	}
 
-
-	// traer las api
 	const [users, setUsers] = useState([]);
-	// const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([]);
+	// traer las api users
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
-		// const endpointUsers = 'http://localhost:3000/api/users';
-			fetch('https://rickandmortyapi.com/api/character')
+		const endpointUsers = 'http://localhost:3000/api/users';
+			fetch(endpointUsers)
 				.then(response => response.json())
 				.then( data => setUsers(data) )
 				.catch(error => console.log(error))
 	}, [])
-	console.log(users);
-	console.log('hola');
-	
 
+	// traer las api products
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/products';
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setProducts(data) )
+				.catch(error => console.log(error))
+	}, [])
+
+
+	console.log(users);
+	console.log('----------------------------------');
+	console.log(products);
 
 	return(
 		<div className="container-fluid">
