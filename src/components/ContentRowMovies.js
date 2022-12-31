@@ -1,38 +1,55 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Movies in DB --> */
-
-let moviesInDB = {
-    title: 'Clientes',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Productos', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Socios' ,
-    color:'warning',
-    cuantity:'3',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
-
 function ContentRowMovies(){
+
+    // traer las api de users
+	const [users, setUsers] = useState([]);
+	const [products, setProducts] = useState([]);
+	// traer las api users
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/users';
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setUsers(data) )
+				.catch(error => console.log(error))
+	}, [])
+
+	// traer las api products
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/products';
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setProducts(data) )
+				.catch(error => console.log(error))
+	}, [])
+
+    /*  Cada set de datos es un objeto literal */
+    let clientesInDB = {
+        title: 'Clientes',
+        color: 'primary', 
+        cuantity: users.count,
+        icon: 'fa-clipboard-list'
+    }
+    
+    let totalProducts = {
+        title:' Productos', 
+        color:'success', 
+        cuantity: products.count,
+        icon:'fa-award'
+    }
+    
+    let sociosQuantity = {
+        title:'Socios' ,
+        color:'warning',
+        cuantity:'3',
+        icon:'fa-user-check',
+    }
+
+    let cartProps = [clientesInDB, totalProducts, sociosQuantity];
+
     return (
     
         <div className="row">

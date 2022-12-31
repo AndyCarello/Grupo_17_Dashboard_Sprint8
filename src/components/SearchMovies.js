@@ -36,32 +36,34 @@ function SearchMovies(){
 		inputTag.current.value = '';
 	}
 
-	const [users, setUsers] = useState([]);
-	const [products, setProducts] = useState([]);
-	// traer las api users
-	useEffect(() => {
-		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/users';
-			fetch(endpointUsers)
-				.then(response => response.json())
-				.then( data => setUsers(data) )
-				.catch(error => console.log(error))
-	}, [])
 
-	// traer las api products
-	useEffect(() => {
-		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/products';
-			fetch(endpointUsers)
-				.then(response => response.json())
-				.then( data => setProducts(data) )
-				.catch(error => console.log(error))
-	}, [])
+	// // traer las api de users
+	// const [users, setUsers] = useState([]);
+	// const [products, setProducts] = useState([]);
+	// // traer las api users
+	// useEffect(() => {
+	// 	// Petición Asincrónica al montarse el componente
+	// 	const endpointUsers = 'http://localhost:3000/api/users';
+	// 		fetch(endpointUsers)
+	// 			.then(response => response.json())
+	// 			.then( data => setUsers(data) )
+	// 			.catch(error => console.log(error))
+	// }, [])
+
+	// // traer las api products
+	// useEffect(() => {
+	// 	// Petición Asincrónica al montarse el componente
+	// 	const endpointUsers = 'http://localhost:3000/api/products';
+	// 		fetch(endpointUsers)
+	// 			.then(response => response.json())
+	// 			.then( data => setProducts(data) )
+	// 			.catch(error => console.log(error))
+	// }, [])
 
 
-	console.log(users);
-	console.log('----------------------------------');
-	console.log(products);
+	// console.log(users);
+	// console.log('----------------------------------');
+	// console.log(products);
 
 	return(
 		<div className="container-fluid">
