@@ -3,16 +3,16 @@ import React from 'react';
 function ChartRow(props){
     return (
                 <tr>
-                    {/* <td>{props.rows.id}</td>
-                    <td>{props.rows.name}</td>
-                    <td>{props.rows.email}</td> */}
-                    {/* <td>
-                        <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
+                    <td>{props.name}</td>
+                    <td>{props.description}</td>
+                    <td>{props.price}</td>
+                    <td>{props.category.name}
+                        {/* <ul>
+                            {props.category.map( (category,i) => 
+                                <li key={`category ${i}`}>{category.name}</li>
                             )}
-                        </ul>
-                    </td> */}
+                        </ul> */}
+                    </td>
                     {/* <td>{props.Awards}</td> */}
                 </tr>
             )

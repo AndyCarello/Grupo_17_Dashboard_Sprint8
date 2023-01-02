@@ -4,37 +4,34 @@ import ChartRow from './ChartRow';
 
 
 function Chart (){
+	// const [users, setUsers] = useState([]);
 
-    // traer las api de users
-	const [users, setUsers] = useState([]);
-
-	// const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([]);
 
 	// traer las api users
-	useEffect(() => {
-		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/users';
-			fetch(endpointUsers)
-				.then(response => response.json())
-				.then( data => setUsers(data) )
-				.catch(error => console.log(error))
-	}, [])
-
-	// traer las api products
 	// useEffect(() => {
 	// 	// Petición Asincrónica al montarse el componente
-	// 	const endpointUsers = 'http://localhost:3000/api/products';
+	// 	const endpointUsers = 'http://localhost:3000/api/users';
 	// 		fetch(endpointUsers)
 	// 			.then(response => response.json())
-	// 			.then( data => setProducts(data) )
+	// 			.then( data => setUsers(data.rows) )
 	// 			.catch(error => console.log(error))
-	// }, []);
+	// }, [])
+
+	// traer las api products
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/products';
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setProducts(data.rows) )
+				.catch(error => console.log(error))
+	}, []);
+
+    console.log(products)
 
     // console.log(users.rows[1].name);
-
-    let tableRowsData = [users]
-
-    console.log(tableRowsData)
+    // console.log(products);
 
     // let tableRowsData = [
     //     {
@@ -61,25 +58,25 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Email</th>
-                                {/* <th>Género</th>
-                                <th>Premios</th> */}
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                                <th>Categoria</th>
+                                {/* <th>Premios</th> */}
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>Email</th>
-                                {/* <th>Género</th>
-                                <th>Premios</th> */}
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                                <th>Categoria</th>
+                                {/* <th>Premios</th> */}
                             </tr>
                         </tfoot>
                         <tbody>
                             {
-                            tableRowsData.map( ( row , i) => {
+                            products.map( ( row , i) => {
                                 return <ChartRow { ...row} key={i}/>
                             })
                             }
