@@ -7,7 +7,9 @@ function Chart (){
 
     // traer las api de users
 	const [users, setUsers] = useState([]);
-	const [products, setProducts] = useState([]);
+
+	// const [products, setProducts] = useState([]);
+
 	// traer las api users
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
@@ -19,14 +21,20 @@ function Chart (){
 	}, [])
 
 	// traer las api products
-	useEffect(() => {
-		// Petición Asincrónica al montarse el componente
-		const endpointUsers = 'http://localhost:3000/api/products';
-			fetch(endpointUsers)
-				.then(response => response.json())
-				.then( data => setProducts(data) )
-				.catch(error => console.log(error))
-	}, [])
+	// useEffect(() => {
+	// 	// Petición Asincrónica al montarse el componente
+	// 	const endpointUsers = 'http://localhost:3000/api/products';
+	// 		fetch(endpointUsers)
+	// 			.then(response => response.json())
+	// 			.then( data => setProducts(data) )
+	// 			.catch(error => console.log(error))
+	// }, []);
+
+    // console.log(users.rows[1].name);
+
+    let tableRowsData = [users]
+
+    console.log(tableRowsData)
 
     // let tableRowsData = [
     //     {
@@ -45,7 +53,6 @@ function Chart (){
     //     }, 
     // ]
 
-    console.log(users)
     return (
         /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
@@ -54,29 +61,28 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                {/* <th>Género</th>
+                                <th>Premios</th> */}
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                {/* <th>Género</th>
+                                <th>Premios</th> */}
                             </tr>
                         </tfoot>
                         <tbody>
                             {
-                            users.map( ( row , i) => {
+                            tableRowsData.map( ( row , i) => {
                                 return <ChartRow { ...row} key={i}/>
                             })
                             }
-
                         </tbody>
                     </table>
                 </div>
