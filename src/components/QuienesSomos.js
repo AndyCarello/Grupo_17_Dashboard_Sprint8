@@ -1,9 +1,8 @@
 import React from 'react';
-// import imagenFondo from '../assets/images/mandalorian.jpg';
 import imagenFondo from '../assets/images/pasteleria.jpg';
 
 
-function LastMovieInDb(){
+function QuienesSomos(){
     return(
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -22,11 +21,11 @@ function LastMovieInDb(){
                             confiterías de la zona ofreciendo bandejas con pedacitos de tortas que con esmero preparaba
                             desde la cocina de su casa de Belgrano, sobre la calle O´Higgins. Y así, algo que nació como
                             un hobby, empezaba a vislumbrar un nuevo camino…</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="https://github.com/AndyCarello/Grupo_17_">Ir a la web Oficial</a>
+                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href="https://github.com/AndyCarello/Grupo_17_">Ir a la web Oficial</a>
                 </div>
             </div>
         </div>
     )
 }
 
-export default LastMovieInDb;
+export default QuienesSomos;

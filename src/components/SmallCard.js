@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SmallCard(props){
+
     return(
         <div className="col-md-4 mb-4">
             <div className={`card border-left-${props.color} shadow h-100 py-2`}>
@@ -23,7 +24,6 @@ function SmallCard(props){
 }
 
 /* DEFINICIÓN DE PROPIEDADES POR DEFAULT */
-
 SmallCard.defaultProps = {
     title: 'No Title',
     color: 'success',
@@ -32,7 +32,6 @@ SmallCard.defaultProps = {
 }
 
 /* PROPTYPES */
-
 SmallCard.propTypes = {
     atritutes: PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -44,7 +43,5 @@ SmallCard.propTypes = {
         icon: PropTypes.string.isRequired
     })
 }
-
-
 
 export default SmallCard;
