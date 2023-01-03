@@ -40,23 +40,23 @@ function SideBar(){
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
                 <Link className="nav-link" to="/GenresInDb">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <i className="fas fa-cheese"></i>
+                        <span>Nuestras Categorias</span>
                     </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
                     <Link className="nav-link" to="/Ultimas-Cargas">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                        <i className="fas fa-users"></i>
                         <span>Ultimas Cargas</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
                 <Link className="nav-link" to="/Chart">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <i className="fas fa-table"></i>
+                        <span>Detalle de Productos</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
