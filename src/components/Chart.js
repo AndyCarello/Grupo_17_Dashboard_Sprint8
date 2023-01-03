@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ChartRow from "./ChartRow";
-import Footer from "./Footer";
-import TopBar from "./TopBar";
 
 function Chart() {
   const [products, setProducts] = useState([]);
@@ -23,7 +21,6 @@ function Chart() {
       <div id="content-wrapper" className="d-flex flex-column">
         {/*<!-- Main Content -->*/}
         <div id="content">
-          <TopBar />
 
           <div className="card shadow mb-4">
             <div className="card-body">
@@ -62,7 +59,6 @@ function Chart() {
             </div>
           </div>
 
-          <Footer />
         </div>
       </div>
     </>
