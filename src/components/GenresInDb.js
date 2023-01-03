@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import  {CategoriasProducts}  from "./CategoriasProducts";
-import { UltimoCliente } from "./UltimoCliente";
-import { UltimoProducto } from "./UltimoProducto";
 
 function GenresInDb() {
   const [products, setProducts] = useState([]);
