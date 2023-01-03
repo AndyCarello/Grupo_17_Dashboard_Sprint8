@@ -35,21 +35,21 @@ function ContentRow(){
         title: 'Clientes',
         color: 'primary', 
         cuantity: users.count,
-        icon: 'fa-clipboard-list'
+        icon: 'fa-user-check'
     }
     
     let totalProducts = {
         title:' Productos', 
         color:'success', 
         cuantity: products.count,
-        icon:'fa-award'
+        icon:'fa-cheese'
     }
     
     let sociosQuantity = {
         title:'Categorias' ,
         color:'warning',
         cuantity: products.categorias || '2',
-        icon:'fa-user-check',
+        icon:'fa-clipboard-list',
     }
 
     let cartProps = [clientesInDB, totalProducts, sociosQuantity];
