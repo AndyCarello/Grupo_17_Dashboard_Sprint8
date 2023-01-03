@@ -2,11 +2,11 @@ import React from 'react';
 import image from '../assets/images/sp_logo.png';
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
-import SearchMovies from './SearchMovies';
+import ContentRow from './ContentRow';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import Chart from './Chart';
+import { UltimasCargas } from './UltimasCargas';
 
 function SideBar(){
     return(
@@ -47,25 +47,17 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
+                    <Link className="nav-link" to="/Ultimas-Cargas">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Ultimas Cargas</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <Link className="nav-link" to="/Chart">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
                 </li>
-                
-                {/*<!-- Buscador -->*/}
-                {/* <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/SearchMovies">
-                        <i className="fas fa-search"></i>
-                        <span>Search a movie</span>
-                    </Link>
-                </li> */}
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -79,15 +71,15 @@ function SideBar(){
                 <Route path="/GenresInDb">
                     <GenresInDb />
                 </Route>
-                <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
+                <Route path="/Chart">
+                    <Chart />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/Ultimas-Cargas">
+                    <UltimasCargas />
                 </Route>
-                {/* <Route path="/SearchMovies">
-                    <SearchMovies />
-                </Route> */}
+                <Route path="/ContentRow">
+                    <ContentRow />
+                </Route>
                 <Route component={NotFound} />
             </Switch>
             {/*<!-- End Microdesafio 2 -->*/}

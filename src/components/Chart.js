@@ -8,16 +8,6 @@ function Chart (){
 
 	const [products, setProducts] = useState([]);
 
-	// traer las api users
-	// useEffect(() => {
-	// 	// Petición Asincrónica al montarse el componente
-	// 	const endpointUsers = 'http://localhost:3000/api/users';
-	// 		fetch(endpointUsers)
-	// 			.then(response => response.json())
-	// 			.then( data => setUsers(data.rows) )
-	// 			.catch(error => console.log(error))
-	// }, [])
-
 	// traer las api products
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
@@ -27,28 +17,6 @@ function Chart (){
 				.then( data => setProducts(data.rows) )
 				.catch(error => console.log(error))
 	}, []);
-
-    // console.log(products)
-
-    // console.log(users.rows[1].name);
-    // console.log(products);
-
-    // let tableRowsData = [
-    //     {
-    //         Title: 'Billy Elliot ',
-    //         Length: '123',
-    //         Rating: '5',
-    //         Categories: ['Drama','Comedia'],
-    //         Awards: 2
-    //     },
-    //     {
-    //         Title: 'Alicia en el país de las maravillas',
-    //         Length: '142',
-    //         Rating: '4.8',
-    //         Categories: ['Drama','Acción','Comedia'],
-    //         Awards: 3
-    //     }, 
-    // ]
 
     return (
         /* <!-- DataTales Example --> */

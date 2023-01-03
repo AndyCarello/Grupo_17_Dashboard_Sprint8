@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SmallCard from './SmallCard';
 
-function ContentRowMovies(){
+function ContentRow(){
 
     // traer las api de users
 	const [users, setUsers] = useState([]);
@@ -57,15 +57,11 @@ function ContentRowMovies(){
     return (
     
         <div className="row">
-            
             {cartProps.map( (movie, i) => {
-
                 return <SmallCard {...movie} key={i}/>
-            
             })}
-
         </div>
     )
 }
 
-export default ContentRowMovies;
+export default ContentRow;

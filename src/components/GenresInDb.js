@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import  {CategoriasProducts}  from "./CategoriasProducts";
-
+import { UltimoCliente } from "./UltimoCliente";
+import { UltimoProducto } from "./UltimoProducto";
 
 function GenresInDb() {
   const [products, setProducts] = useState([]);
@@ -14,9 +15,8 @@ function GenresInDb() {
       .catch((error) => console.log(error));
   }, []);
 
-
-  console.log(products)
   return (
+    <>
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
         <div className="card-header py-3">
@@ -26,66 +26,18 @@ function GenresInDb() {
         </div>
         <div className="card-body">
           <div className="row">
-
             {
               products.map( ( row , i) => {
                 return <CategoriasProducts { ...row} key={i}/>
             })
             }
-            {/*<div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Acción</div>
-              </div>
-            </div>
-             <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Animación</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Aventura</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Ciencia Ficción</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Comedia</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Documental</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Drama</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Fantasia</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Infantiles</div>
-              </div>
-            </div>
-            <div className="col-lg-6 mb-4">
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">Musical</div>
-              </div> 
-            </div> */}
+          </div>
+          <div>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }
 

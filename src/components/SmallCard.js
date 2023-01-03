@@ -24,7 +24,6 @@ function SmallCard(props){
 }
 
 /* DEFINICIÓN DE PROPIEDADES POR DEFAULT */
-
 SmallCard.defaultProps = {
     title: 'No Title',
     color: 'success',
@@ -33,7 +32,6 @@ SmallCard.defaultProps = {
 }
 
 /* PROPTYPES */
-
 SmallCard.propTypes = {
     atritutes: PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -45,7 +43,5 @@ SmallCard.propTypes = {
         icon: PropTypes.string.isRequired
     })
 }
-
-
 
 export default SmallCard;
