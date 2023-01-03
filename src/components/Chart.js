@@ -28,7 +28,7 @@ function Chart (){
 				.catch(error => console.log(error))
 	}, []);
 
-    console.log(products)
+    // console.log(products)
 
     // console.log(users.rows[1].name);
     // console.log(products);

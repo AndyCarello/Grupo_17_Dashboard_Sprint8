@@ -6,6 +6,7 @@ function ContentRowMovies(){
     // traer las api de users
 	const [users, setUsers] = useState([]);
 	const [products, setProducts] = useState([]);
+    
 	// traer las api users
 	useEffect(() => {
 		// Petición Asincrónica al montarse el componente
@@ -22,7 +23,10 @@ function ContentRowMovies(){
 		const endpointUsers = 'http://localhost:3000/api/products';
 			fetch(endpointUsers)
 				.then(response => response.json())
-				.then( data => setProducts(data) )
+				.then( data => {
+                    data.categorias = data.categorias.length;
+                    setProducts(data);
+                } )
 				.catch(error => console.log(error))
 	}, [])
 
@@ -42,9 +46,9 @@ function ContentRowMovies(){
     }
     
     let sociosQuantity = {
-        title:'Socios' ,
+        title:'Categorias' ,
         color:'warning',
-        cuantity:'3',
+        cuantity: products.categorias || '2',
         icon:'fa-user-check',
     }
 

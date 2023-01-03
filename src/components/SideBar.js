@@ -60,34 +60,18 @@ function SideBar(){
                 </li>
                 
                 {/*<!-- Buscador -->*/}
-                <li className="nav-item nav-link">
+                {/* <li className="nav-item nav-link">
                     <Link className="nav-link" to="/SearchMovies">
                         <i className="fas fa-search"></i>
                         <span>Search a movie</span>
                     </Link>
-                </li>
+                </li> */}
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastMovieInDb">
-                <LastMovieInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
@@ -101,9 +85,9 @@ function SideBar(){
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
                 </Route>
-                <Route path="/SearchMovies">
+                {/* <Route path="/SearchMovies">
                     <SearchMovies />
-                </Route>
+                </Route> */}
                 <Route component={NotFound} />
             </Switch>
             {/*<!-- End Microdesafio 2 -->*/}
