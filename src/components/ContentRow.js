@@ -57,8 +57,8 @@ function ContentRow(){
     return (
     
         <div className="row">
-            {cartProps.map( (movie, i) => {
-                return <SmallCard {...movie} key={i}/>
+            {cartProps.map( (tarjetas, i) => {
+                return <SmallCard {...tarjetas} key={i}/>
             })}
         </div>
     )

@@ -33,8 +33,6 @@ export const UltimoProducto = () => {
                 </span>
                 <p>Descripcion: {products.description}</p>
                 <p>Precio: {products.price}</p>
-                {/* <p>Imagen: {products.image}</p> */}
-                <img url={products.image} alt={products.name}/>
               </div>
             </div>
             <div></div>

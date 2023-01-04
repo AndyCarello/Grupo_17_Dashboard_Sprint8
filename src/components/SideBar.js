@@ -1,12 +1,12 @@
 import React from 'react';
 import image from '../assets/images/sp_logo.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
 import ContentRow from './ContentRow';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
-import Chart from './Chart';
 import { UltimasCargas } from './UltimasCargas';
+import { NuestasCategorias } from './NuestasCategorias';
+import { TablaChart } from './TablaChart';
 
 function SideBar(){
     return(
@@ -39,7 +39,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/NuestrasCategorias">
                         <i className="fas fa-cheese"></i>
                         <span>Nuestras Categorias</span>
                     </Link>
@@ -54,7 +54,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/Chart">
+                <Link className="nav-link" to="/TablaChart">
                         <i className="fas fa-table"></i>
                         <span>Detalle de Productos</span></Link>
                 </li>
@@ -68,11 +68,11 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route path="/NuestrasCategorias">
+                    <NuestasCategorias />
                 </Route>
-                <Route path="/Chart">
-                    <Chart />
+                <Route path="/TablaChart">
+                    <TablaChart />
                 </Route>
                 <Route path="/Ultimas-Cargas">
                     <UltimasCargas />
