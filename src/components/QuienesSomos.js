@@ -21,7 +21,7 @@ function QuienesSomos(){
                             confiterías de la zona ofreciendo bandejas con pedacitos de tortas que con esmero preparaba
                             desde la cocina de su casa de Belgrano, sobre la calle O´Higgins. Y así, algo que nació como
                             un hobby, empezaba a vislumbrar un nuevo camino…</p>
-                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href="https://github.com/AndyCarello/Grupo_17_">Ir a la web Oficial</a>
+                    <a className="btn btn-danger" target="_blank" rel="noreferrer" href="http://localhost:3000/">Ir a la web Oficial</a>
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ import {Link, Route, Switch} from 'react-router-dom';
 import { UltimasCargas } from './UltimasCargas';
 import { NuestasCategorias } from './NuestasCategorias';
 import { TablaChart } from './TablaChart';
+import { TablaChartVentas } from './TablaChartVentas';
 
 function SideBar(){
     return(
@@ -37,13 +38,27 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">Actions</div>
 
+                {/*<!-- Nav Item - Tables -->*/}
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/TablaChart">
+                        <i className="fas fa-table"></i>
+                        <span>Detalle de Productos</span></Link>
+                </li>
+
+                {/*<!-- Nav Item - Tables -->*/}
+                <li className="nav-item nav-link">
+                <Link className="nav-link" to="/TableCharVentas">
+                        <i className="fas fa-table"></i>
+                        <span>Detalle de Ventas</span></Link>
+                </li>
+
                 {/*<!-- Nav Item - Pages -->*/}
-                <li className="nav-item">
+                {/* <li className="nav-item">
                 <Link className="nav-link" to="/NuestrasCategorias">
                         <i className="fas fa-cheese"></i>
                         <span>Nuestras Categorias</span>
                     </Link>
-                </li>
+                </li> */}
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
@@ -52,12 +67,7 @@ function SideBar(){
                         <span>Ultimas Cargas</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/TablaChart">
-                        <i className="fas fa-table"></i>
-                        <span>Detalle de Productos</span></Link>
-                </li>
+                
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -79,6 +89,10 @@ function SideBar(){
                 </Route>
                 <Route path="/ContentRow">
                     <ContentRow />
+                </Route>
+                {/* SE AGREGO TABLACHARVENTAS */}
+                <Route path="/TableCharVentas">
+                    <TablaChartVentas />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

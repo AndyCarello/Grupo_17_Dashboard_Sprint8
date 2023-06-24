@@ -6,6 +6,10 @@ function ContentRow(){
     // traer las api de users
 	const [users, setUsers] = useState([]);
 	const [products, setProducts] = useState([]);
+    const [carts, setCarts] = useState([]);
+    const [total, setTotal] = useState(0);
+
+
     
 	// traer las api users
 	useEffect(() => {
@@ -30,6 +34,27 @@ function ContentRow(){
 				.catch(error => console.log(error))
 	}, [])
 
+    // traer las api cars
+	useEffect(() => {
+		// Petición Asincrónica al montarse el componente
+		const endpointUsers = 'http://localhost:3000/api/carts';
+			fetch(endpointUsers)
+				.then(response => response.json())
+				.then( data => setCarts(data) )
+				.catch(error => console.log(error))
+	}, [])
+    
+    useEffect(()=>{
+        const calculateTotal = () => {
+            const totalSum = carts.reduce((accumulator, currentValue) => accumulator + currentValue.total, 0);
+            setTotal(totalSum);
+          };
+        
+          calculateTotal();
+    },[carts])
+    console.log(total);
+      
+
     /*  Cada set de datos es un objeto literal */
     let clientesInDB = {
         title: 'Clientes',
@@ -45,6 +70,13 @@ function ContentRow(){
         icon:'fa-cheese'
     }
     
+    let salesQuantity = {
+        title:'Venta total' ,
+        color:'warning',
+        cuantity: '$ '+ total || '2',
+        icon:'fa-clipboard-list',
+    }
+
     let sociosQuantity = {
         title:'Categorias' ,
         color:'warning',
@@ -52,7 +84,14 @@ function ContentRow(){
         icon:'fa-clipboard-list',
     }
 
-    let cartProps = [clientesInDB, totalProducts, sociosQuantity];
+    
+
+    let cartProps = [
+        clientesInDB,
+        salesQuantity,
+        totalProducts,
+        // sociosQuantity,
+    ];
 
     return (
     
